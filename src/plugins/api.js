@@ -1,4 +1,1 @@
-require('dotenv').config();
-
-console.log(process.env.API_URL);
-export const API_URL = process.env.API_URL;
+export const API_URL = "https://fedpoffa-gis-api.herokuapp.com";
