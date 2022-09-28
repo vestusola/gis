@@ -15,9 +15,9 @@ export default {
       apiKey: "AIzaSyAq2t3VmHFIYc_XM0P-hGii928juQocCVc",
       // libraries: ["drawing", "geometry", "places"],
       libraries: [],
-      //mapCenter: { lat: 8.14968146497296, lng: 4.713906499464024 },
-      mapCenter: { lat: 8.133669901120484, lng: 4.712130057292575 },
-      type: 'department'
+      mapCenter: { lat: 8.14968146497296, lng: 4.713906499464024 },
+      // mapCenter: { lat: 8.133669901120484, lng: 4.712130057292575 },
+      type: 'filling-station'
     };
   },
   methods: {
