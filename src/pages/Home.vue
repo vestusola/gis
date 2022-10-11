@@ -15,9 +15,9 @@ export default {
       apiKey: "AIzaSyAq2t3VmHFIYc_XM0P-hGii928juQocCVc",
       // libraries: ["drawing", "geometry", "places"],
       libraries: [],
-      mapCenter: { lat: 8.14968146497296, lng: 4.713906499464024 },
-      // mapCenter: { lat: 8.133669901120484, lng: 4.712130057292575 },
-      type: 'filling-station'
+      departmentCoords: { lat: 8.14968146497296, lng: 4.713906499464024 },
+      fillingStationCoords: { lat: 8.133669901120484, lng: 4.712130057292575 },
+      type: process.env.VUE_APP_MAP_TYPE
     };
   },
   methods: {
@@ -39,7 +39,7 @@ export default {
 
             googleMapApi.load().then((google) => {
               let map = new google.maps.Map(document.querySelector("#map"), {
-                center: this.mapCenter,
+                center: this.type == 'filling-station' ? this.fillingStationCoords : this.departmentCoords,
                 ...mapSettings,
               });
 
@@ -65,7 +65,6 @@ export default {
               }
               map.setZoom(mapSettings.zoom);
             });
-            console.log(response.data.data);
           } else {
             console.log(response.data.message);
           }
