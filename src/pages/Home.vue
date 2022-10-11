@@ -51,13 +51,12 @@ export default {
                   visible: true
                 });
 
-                var infoWindow = new google.maps.InfoWindow();
-                infoWindow.setContent(`<h5><b>${item.name}</b></h5><p><b>Address:</b> ${item.address}</p>`)
-                infoWindow.open(map, marker);
-
+                
                 marker.setMap(map);
                 marker.addListener('click', function () {
-                  infoWindow.open(map);
+                  var infoWindow = new google.maps.InfoWindow();
+                  infoWindow.setContent(`<h5><b>${item.name}</b></h5><p><b>Address:</b> ${item.address}</p>`)
+                  infoWindow.open(map, marker);
                 })
               });
               if (this.type == 'department') {
